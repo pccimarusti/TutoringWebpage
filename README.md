@@ -24,6 +24,7 @@ npm install
 
 ## 📚 Technologies Used
 - React
+- TypeScript
 - Tailwind CSS
 - Framer Motion
 - React Scroll
