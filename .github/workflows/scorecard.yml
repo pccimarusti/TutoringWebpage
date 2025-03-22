@@ -1,7 +1,3 @@
-# This workflow uses actions that are not certified by GitHub. They are provided
-# by a third-party and are governed by separate terms of service, privacy
-# policy, and support documentation.
-
 name: Scorecard Supply-Chain Security
 
 on:
@@ -21,9 +17,6 @@ jobs:
     permissions:
       security-events: write
       id-token: write
-      # Uncomment the next lines if using a private repo
-      # contents: read
-      # actions: read
 
     steps:
       - name: "Checkout code"
@@ -32,14 +25,14 @@ jobs:
           persist-credentials: false
 
       - name: "Run Scorecard Analysis"
-        uses: ossf/scorecard-action@v2
+        uses: ossf/scorecard-action@v2.3.1
         with:
           results_file: results.sarif
           results_format: sarif
           publish_results: true
 
       - name: "Upload Artifact"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: SARIF file
           path: results.sarif
