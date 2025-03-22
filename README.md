@@ -2,7 +2,7 @@
 
 This is my personal portfolio website showcasing my skills, projects, and experience as a software engineer specializing in full-stack development.
 
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/JacksonBryantFGCU/portfolio-typescript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/JacksonBryant/portfolio-typescript)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/JacksonBryantFGCU/portfolio-typescript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/JacksonBryantFGCU/portfolio-typescript)
 
 ## Features
 - 🔥 Interactive animations powered by Framer Motion
