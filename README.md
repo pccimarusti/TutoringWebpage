@@ -3,6 +3,7 @@
 This is my personal portfolio website showcasing my skills, projects, and experience as a software engineer specializing in full-stack development.
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/JacksonBryantFGCU/portfolio-typescript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/JacksonBryantFGCU/portfolio-typescript)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10219/badge)](https://www.bestpractices.dev/projects/10219)
 
 <svg xmlns="http://www.w3.org/2000/svg" width="136" height="20" role="img" aria-label="openssf scorecard: 3.3">
   <title>openssf scorecard: 3.3</title>
