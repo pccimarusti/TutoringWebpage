@@ -1,0 +1,27 @@
+name: Security Checks
+
+on: [pull_request]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Run Linter
+        run: npx eslint . --ext .ts,.tsx
+
+      - name: Run Dependency Security Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: "portfolio-typescript"
+          format: "HTML"
+
+      - name: Run CodeQL Analysis
+        uses: github/codeql-action/init@v2
+        with:
+          languages: javascript
+
+      - name: Run CodeQL Scan
+        uses: github/codeql-action/analyze@v2
