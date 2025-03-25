@@ -1,6 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: "npm" # Change this if using another package manager
+    directory: "/"  # Root directory
     schedule:
-      interval: "weekly"
+      interval: "weekly"  # Check for updates every week
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps):"
+      include: "scope"
