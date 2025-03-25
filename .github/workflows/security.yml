@@ -24,4 +24,6 @@ jobs:
           languages: javascript
 
       - name: Run CodeQL Scan
-        uses: github/codeql-action/analyze@v2
+        uses: actions/checkout@v3
+        with:
+          ref: 'sha256:4c36b7a72e70e67489120fffb6b44f55d7dbf8a4'
