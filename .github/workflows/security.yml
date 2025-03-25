@@ -3,6 +3,17 @@ name: Security Checks
 on: [pull_request]
 
 jobs:
+  update-code:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update some files
+        run: echo "Update" >> file.txt
+        
   security:
     runs-on: ubuntu-latest
     steps:
