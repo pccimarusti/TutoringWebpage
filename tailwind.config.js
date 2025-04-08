@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+      },
       colors: {
         "blue-800": "#1E40AF",
         "blue-600": "#2563EB",
@@ -12,4 +16,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
