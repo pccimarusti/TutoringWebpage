@@ -3,8 +3,9 @@
 This is my personal portfolio website showcasing my skills, projects, and experience as a software engineer specializing in full-stack development.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba4f54eb-6213-41e0-ba45-fa07715dcd1a/deploy-status)](https://app.netlify.com/sites/jacksonbryantportfolio/deploys)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10219/portfolio-typescript)](https://www.bestpractices.dev/portfolio-typescript/10219)
+[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/portfolio-typescript/10219/badge)](https://bestpractices.coreinfrastructure.org)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/JacksonBryantFGCU/portfolio-typescript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/JacksonBryantFGCU/portfolio-typescript)
+
 
 ## Features
 - Interactive animations powered by Framer Motion
