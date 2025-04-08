@@ -2,6 +2,8 @@
 
 This is my personal portfolio website showcasing my skills, projects, and experience as a software engineer specializing in full-stack development.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba4f54eb-6213-41e0-ba45-fa07715dcd1a/deploy-status)](https://app.netlify.com/sites/jacksonbryantportfolio/deploys)
+
 ## Features
 - 🔥 Interactive animations powered by Framer Motion
 - 🎨 Beautifully styled with Tailwind CSS
