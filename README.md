@@ -5,11 +5,12 @@ This is my personal portfolio website showcasing my skills, projects, and experi
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba4f54eb-6213-41e0-ba45-fa07715dcd1a/deploy-status)](https://app.netlify.com/sites/jacksonbryantportfolio/deploys)
 
 ## Features
-- 🔥 Interactive animations powered by Framer Motion
-- 🎨 Beautifully styled with Tailwind CSS
-- 💡 Smooth scrolling and responsive design
-- 💻 Projects section with live demos and GitHub links
-- 📜 Downloadable Resume
+- Interactive animations powered by Framer Motion
+- Beautifully styled with Tailwind CSS
+- Smooth scrolling and responsive design
+- Projects section with live demos and GitHub links
+- Downloadable Resume
+- Certifications section with links to certification
 
 ## 🔧 Installation
 1. Clone the repo:  
