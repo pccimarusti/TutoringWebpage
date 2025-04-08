@@ -22,7 +22,7 @@ const About: React.FC = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="my-20 text-center text-4xl font-bold text-gradient bg-gradient-to-r from-accent via-blue-500 to-cyan-500 bg-clip-text text-transparent"
+        className="my-20 text-center text-4xl font-bold text-gradient bg-gradient-to-r from-accent via-blue-500 to-cyan-500 bg-clip-text text-transparent font-sans"
       >
         About <span className="text-neutral-500">Me</span>
       </motion.h2>
@@ -37,6 +37,7 @@ const About: React.FC = () => {
           className="w-full lg:w-1/2 lg:p-8 flex justify-center"
         >
           <motion.img
+            loading="lazy"
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             whileInView={{ clipPath: "inset(0 0 0 0)" }}
             transition={{ duration: 1.2 }}

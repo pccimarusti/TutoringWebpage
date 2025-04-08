@@ -89,9 +89,10 @@ const Projects: React.FC = () => {
                 {/* Project Image */}
                 {project.image && (
                   <motion.img
+                    loading="lazy"
                     src={project.image}
                     alt={`${project.title} screenshot`}
-                    className="w-full h-56 sm:h-64 md:h-72 object-contain rounded-lg mt-4 transition-transform duration-300 hover:scale-105"
+                    className="w-full max-h-[24rem] object-contain rounded-lg mt-4 transition-transform duration-300 hover:scale-105"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6 }}

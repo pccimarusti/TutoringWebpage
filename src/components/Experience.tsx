@@ -46,13 +46,13 @@ const Experience: React.FC = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-col items-center justify-center gap-8"
+        className="flex flex-col items-center justify-center gap-8 mx-4"
       >
         {EXPERIENCES.map((experience: ExperienceItem, index: number) => (
           <motion.div
             key={index}
             variants={fadeInUp as Variants}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.01 }}
             className="w-full max-w-3xl bg-gradient-to-r from-sky-500 to-blue p-[2px] rounded-xl"
           >
             {/* Individual Experience Card */}

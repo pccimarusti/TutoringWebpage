@@ -14,7 +14,7 @@ import { fadeInUp, slideInRight, staggerContainer } from "../constants/animation
  */
 const Hero: React.FC = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-35 pt-32 px-6 sm:px-8" id="home">
+    <div className="border-b border-neutral-900 min-h-screen pb-4 pt-24 sm:pt-28 px-4 sm:px-8" id="home">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -26,8 +26,11 @@ const Hero: React.FC = () => {
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
           <motion.h1
             variants={fadeInUp}
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
-            className="pb-6 text-3xl sm:text-5xl lg:text-7xl font-semibold tracking-tight"
+            className="pb-4 max-sm:py-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold font-sans tracking-tight shadow-md"
             aria-label="Jackson Bryant - Software Engineer"
           >
             Jackson Bryant
@@ -36,7 +39,7 @@ const Hero: React.FC = () => {
           {/* Animated Typing Effect */}
           <motion.div
             variants={fadeInUp}
-            className="mt-2 bg-gradient-to-r from-yellow-300 via-emerald-500 to-accent bg-clip-text text-transparent text-xl sm:text-2xl lg:text-4xl"
+            className="mt-2 text-2xl bg-gradient-to-r from-yellow-300 via-emerald-500 to-accent bg-clip-text text-transparent sm:text-2xl md:text-3xl lg:text-4xl font-mono"
           >
             <TypeAnimation
               sequence={[
@@ -57,13 +60,13 @@ const Hero: React.FC = () => {
 
           <motion.p
             variants={fadeInUp}
-            className="my-4 max-w-xl py-4 font-light tracking-tighter text-sm sm:text-base lg:text-lg"
+            className="my-2 max-w-xl py-4 text-sm font-light tracking-wide sm:text-base lg:text-lg leading-relaxed"
           >
             {HERO_CONTENT}
           </motion.p>
 
           {/* Download Resume Button */}
-          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 mt-4 sm:mt-6">
+          <div className="flex flex-col sm:flex-row items-center sm:space-x-4 mt-2 sm:mt-4">
             <div className="flex justify-center lg:justify-start mt-0">
               <motion.button
                 variants={fadeInUp}
@@ -78,7 +81,7 @@ const Hero: React.FC = () => {
                   boxShadow: "0 0 12px rgba(30, 58, 138, 0.7), 0 0 24px rgba(0, 0, 128, 0.5)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative group overflow-hidden rounded-xl py-3 px-6 mt-4 w-48 bg-gradient-to-r from-cyan-500 to-blue-600 text-white transition-all duration-300"
+                className="relative group overflow-hidden rounded-xl py-3 px-6 mt-4 w-48 bg-gradient-to-r from-cyan-500 to-blue-600 text-white transition-all duration-300 font-medium tracking-tight"
                 aria-label="Download Resume"
               >
                 <a href={pdf} download="Jackson Bryant Resume 2025.pdf" className="relative z-10">
@@ -122,7 +125,7 @@ const Hero: React.FC = () => {
         <div className="w-full lg:w-1/2 flex justify-center mt-10 lg:mt-0">
           <motion.div
             variants={slideInRight}
-            className="hidden sm:flex justify-center lg:justify-end w-full"
+            className="flex justify-center lg:justify-end w-full mt-6 sm:mt-0"
           >
             <motion.img
               whileHover={{ scale: 1.05 }}

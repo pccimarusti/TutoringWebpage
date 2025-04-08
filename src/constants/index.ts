@@ -2,6 +2,8 @@ import project1 from "../assets/projects/project1.png";
 import project2 from "../assets/projects/project2.png";
 import SunstonePickleball from "../assets/projects/SunstonePickleball.png";
 import arthrexmysurgery from "../assets/arthrexmysurgery.png";
+import pythonCert from "../assets/pythonCert.png";
+import openSSF from "../assets/OpenSSF.png";
 
 // Type Definitions
 interface Experience {
@@ -25,6 +27,17 @@ interface ContactInfo {
   address: string;
   phoneNo: string;
   email: string;
+}
+
+interface Certifications {
+  title: string;
+  issuer: string;
+  description: string;
+  skills: string[];
+  url: string;
+  image: string;
+  github: string;
+  date: string;
 }
 
 // Hero Section Content
@@ -81,7 +94,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Portfolio Website",
     demo: "https://jacksonbryantportfolio.netlify.app/",
-    github: "https://github.com/JacksonBryantFGCU/portfolio",
+    github: "https://github.com/JacksonBryantFGCU/portfolio-typescript",
     description: "A personal portfolio website showcasing projects, skills, and contact information. Utilizes Framer Motion for section animations.",
     skills: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     image: project2,
@@ -96,6 +109,29 @@ export const PROJECTS: Project[] = [
   // }
 ];
 
+// Certifications Data
+export const CERTIFICATIONS: Certifications[] = [
+  {
+    title: "Scientific Computing with Python",
+    issuer: "freeCodeCamp",
+    description: "Completed the Scientific Computing with Python certification, demonstrating proficiency in Python programming and data analysis.",
+    skills: ["Python", "Data Analysis", "Scientific Computing"],
+    url: "https://www.freecodecamp.org/certification/JacksonBryantFGCU/scientific-computing-with-python-v7",
+    image: pythonCert,
+    github: "https://github.com/JacksonBryantFGCU/certifications",
+    date: "04-06-2025"
+  },
+  {
+    title: "OpenSSF Scorecard Certification",
+    issuer: "The Linux Foundation",
+    description: "Completed the OpenSSF Scorecard certification, demonstrating knowledge of open-source security best practices and tools.",
+    skills: ["Open Source", "Security", "Best Practices"],
+    url: "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/c66a3371-36ba-4d2a-aac6-dc84958067fb-jackson-l-a652b2f3-a2e9-47ab-9614-a0e97f8e9d72-certificate.pdf",
+    image: openSSF,
+    github: "https://github.com/JacksonBryantFGCU/certifications",
+    date: "03-22-2025"
+  },
+]
 // Contact Information
 export const CONTACT: ContactInfo = {
   address: "Wellen Park, Venice, FL 34293",
