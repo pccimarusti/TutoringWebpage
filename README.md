@@ -14,6 +14,7 @@ This is my personal portfolio website showcasing my skills, projects, and experi
 - Projects section with live demos and GitHub links
 - Downloadable Resume
 - Certifications section with links to certification
+- Deployed with Microsoft Azure Static Web Apps with a custom domain
 
 ## 🔧 Installation
 1. Clone the repo:  
@@ -34,6 +35,7 @@ npm install
 - Framer Motion
 - React Scroll
 - TypeAnimation
+- Microsoft Azure Static Web Apps
 
 
 ## 🎨 Future Improvements
