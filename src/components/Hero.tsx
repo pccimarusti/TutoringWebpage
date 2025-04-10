@@ -132,6 +132,7 @@ const Hero: React.FC = () => {
               src={profilePic}
               alt="Jackson Bryant"
               className="rounded-md shadow-lg w-72 sm:w-80 lg:w-96"
+              loading="eager"
             />
           </motion.div>
         </div>
