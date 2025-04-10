@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {
+      "route": "jacksonbryant.com",
+      "redirect": "www.jacksonbryant.com",
+      "statusCode": 301
+    }
+  ]
+}
