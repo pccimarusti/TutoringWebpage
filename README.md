@@ -40,8 +40,9 @@ npm install
 
 ## 🎨 Future Improvements
 -Add loading animations for better user experience.
-- Implement dark/light theme toggle.
+- Implement dark/light theme toggle using Redux.
 - Add more interactive animations.
+- Add a docker container to the Azure Deployement.
 
 ## 📄 License
 This project is licensed under the MIT License.
