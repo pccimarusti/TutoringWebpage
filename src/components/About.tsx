@@ -1,34 +1,30 @@
-import React from "react";
-import aboutImg from "../assets/about-me.jpg";
-import { ABOUT_TEXT, ABOUT_TEXT1 } from "../constants";
-import { motion } from "framer-motion";
-import { fadeInUp, slideInRight } from "../constants/animations";
-
-/**
- * About Component
- * 
- * This component renders the About section of the website, including:
- * - Animated heading
- * - Description text
- * - Profile image (with animations)
- */
+import React from "react"
+import aboutImg from "../assets/about-me.jpg"
+import { motion } from "framer-motion"
+import { fadeInUp, slideInRight } from "../constants/animations"
+import { useContent } from "../hooks/useContent"
 
 const About: React.FC = () => {
+  const { data: about1 } = useContent("about_1")
+const { data: about2 } = useContent("about_2")
   return (
-    <div className="border-b border-neutral-900 pb-4 scroll-mt-48" id="about">
+    <div
+      id="about"
+      className="border-b border-neutral-900 pb-4 scroll-mt-48"
+    >
       {/* Section Heading */}
       <motion.h2
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="my-20 text-center text-4xl font-bold text-gradient bg-gradient-to-r from-accent via-blue-500 to-cyan-500 bg-clip-text text-transparent font-sans"
+        className="my-20 text-center text-4xl font-bold font-sans bg-gradient-to-r from-cyan-500 via-blue to-accent text-transparent bg-clip-text"
       >
         About <span className="text-neutral-500">Me</span>
       </motion.h2>
 
       <div className="flex flex-wrap items-center justify-center">
-        {/* Profile Image with Animation */}
+        {/* Profile Image */}
         <motion.div
           variants={slideInRight}
           initial="hidden"
@@ -37,36 +33,35 @@ const About: React.FC = () => {
           className="w-full lg:w-1/2 lg:p-8 flex justify-center"
         >
           <motion.img
-            loading="lazy"
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             whileInView={{ clipPath: "inset(0 0 0 0)" }}
             transition={{ duration: 1.2 }}
             src={aboutImg}
             alt="About Jackson Bryant"
-            className="rounded-2xl shadow-lg h-3/4 transition-transform hover:scale-105 duration-300"
+            className="rounded-2xl shadow-lg h-3/4 transition-transform duration-300 hover:scale-105"
           />
         </motion.div>
 
-        {/* About Text Description */}
+        {/* About Text */}
         <div className="w-full lg:w-1/2">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col justify-center lg:justify-start items-center lg:items-start"
+            className="flex flex-col items-center lg:items-start justify-center"
           >
-            <p className="my-2 max-w-xl py-6 text-xl font-light tracking-tight text-center lg:text-left">
-              {ABOUT_TEXT}
+            <p className="my-2 max-w-xl py-6 text-xl text-center lg:text-left font-light tracking-tight">
+              {about1?.content || "Loading..."}
             </p>
-            <p className="my-2 max-w-xl py-6 text-xl font-light tracking-tight text-center lg:text-left">
-              {ABOUT_TEXT1}
+            <p className="my-2 max-w-xl py-6 text-xl text-center lg:text-left font-light tracking-tight">
+              {about2?.content || "Loading..."}
             </p>
           </motion.div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default About;

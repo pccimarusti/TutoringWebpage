@@ -1,9 +1,8 @@
 {
-  "routes": [
-    {
-      "route": "jacksonbryant.com",
-      "redirect": "www.jacksonbryant.com",
-      "statusCode": 301
+    "responseOverrides": {
+        "compression": {
+            "enableBrotli": true,
+            "enableGzip": true
+        }
     }
-  ]
-}
+}  

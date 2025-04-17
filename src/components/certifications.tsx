@@ -1,22 +1,18 @@
-import React from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { fadeInUp, staggerContainer } from "../constants/animations";
-import { CERTIFICATIONS } from "../constants";
-import CertificationCard from "../components/CertificationCard";
-
-// Support "MM/DD/YYYY" format from your index.ts
-const parseDate = (dateString: string): Date => {
-    return new Date(dateString);
-};
+import React from "react"
+import { motion, AnimatePresence, Variants } from "framer-motion"
+import { fadeInUp, staggerContainer } from "../constants/animations"
+import { CertificationCard } from "../components/CertificationCard"
+import { useCertifications } from "../hooks/useCertifications"
 
 const Certifications: React.FC = () => {
-  // Sort certifications newest to oldest
-  const sortedCerts = [...CERTIFICATIONS].sort(
-    (a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime()
-  );
+  const {
+    data: certifications = [],
+    isLoading,
+    error,
+  } = useCertifications()
 
   return (
-    <div className="border-b border-neutral-900 pb-8 scroll-mt-32" id="certifications">
+    <div id="certifications" className="border-b border-neutral-900 pb-8 scroll-mt-32">
       {/* Section Heading */}
       <motion.h2
         variants={fadeInUp as Variants}
@@ -24,10 +20,22 @@ const Certifications: React.FC = () => {
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl text-white"
+        className="my-20 text-center text-4xl text-white font-bold"
       >
         Certifications
       </motion.h2>
+
+      {isLoading && (
+        <p className="text-center text-neutral-400 text-sm">Loading certifications...</p>
+      )}
+      {error && (
+        <p className="text-red-500 text-center text-sm">
+          Error: {(error as Error).message}
+        </p>
+      )}
+      {!isLoading && certifications.length === 0 && !error && (
+        <p className="text-center text-neutral-400 text-sm">No certifications found.</p>
+      )}
 
       {/* Certifications Grid */}
       <AnimatePresence mode="wait">
@@ -38,13 +46,13 @@ const Certifications: React.FC = () => {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center gap-8"
         >
-          {sortedCerts.map((cert, index) => (
-            <CertificationCard key={index} {...cert} />
+          {certifications.map((cert) => (
+            <CertificationCard key={cert.id} {...cert} />
           ))}
         </motion.div>
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
 export default Certifications;

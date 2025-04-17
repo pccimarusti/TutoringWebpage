@@ -1,23 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
-import './index.css';
-import { ParallaxProvider } from 'react-scroll-parallax';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
+import { ParallaxProvider } from 'react-scroll-parallax'
+import './index.css'
+import { QueryClientProvider } from '@tanstack/react-query'
+import queryClient from './queryClient'
 
-// Get the root element from the HTML file
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error("Root element not found");
+const rootElement = document.getElementById('root')
+if (!rootElement) throw new Error('Root element not found')
 
-// Create a React root
-const root = ReactDOM.createRoot(rootElement);
+  function scrollToHashWhenReady() {
+    const hash = window.location.hash
+    if (!hash) return
+  
+    const attemptScroll = () => {
+      const target = document.querySelector(hash)
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" })
+      } else {
+        // Keep trying every 100ms until it exists, up to 2 seconds
+        setTimeout(attemptScroll, 100)
+      }
+    }
+  
+    setTimeout(attemptScroll, 100) // Initial short delay
+  }
+  
+  window.addEventListener("load", scrollToHashWhenReady)
 
-// Render the App wrapped with the Redux Provider
-root.render(
-  <Provider store={store}>
-    <ParallaxProvider>
-      <App />
-    </ParallaxProvider>
-  </Provider>
-);
+ReactDOM.createRoot(rootElement).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <ParallaxProvider>
+        <QueryClientProvider client={queryClient}>
+          <App />
+        </QueryClientProvider>
+      </ParallaxProvider>
+    </Provider>
+  </React.StrictMode>
+)
