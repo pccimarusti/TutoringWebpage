@@ -1,23 +1,18 @@
 import { createClient } from '@supabase/supabase-js'
 import type { Database } from './types/supabase'
 
-const supabaseUrl =
-  import.meta.env.VITE_SUPABASE_URL || import.meta.env.SUPABASE_URL
-const supabaseKey =
-  import.meta.env.VITE_SUPABASE_KEY || import.meta.env.SUPABASE_KEY
-
-if (!supabaseUrl || !supabaseKey) {
+if (!(import.meta.env.VITE_SUPABASE_URL) || !(import.meta.env.VITE_SUPABASE_KEY)) {
   throw new Error('❌ Missing Supabase environment variables!')
 }
 
 const supabase = createClient<Database>(
-  supabaseUrl,
-  supabaseKey,
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_KEY,
   {
     global: {
       headers: {
-        apikey: supabaseKey,
-        Authorization: `Bearer ${supabaseKey}`,
+        apikey: import.meta.env.VITE_SUPABASE_KEY,
+        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_KEY}`,
       },
     },
     auth: {
