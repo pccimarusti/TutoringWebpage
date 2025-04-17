@@ -11,8 +11,8 @@ const supabase = createClient<Database>(
   {
     global: {
       headers: {
-        apikey: import.meta.env.VITE_SUPABASE_KEY,
-        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_KEY}`,
+        apikey: import.meta.env.VITE_SUPABASE_KEY!,
+        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_KEY!}`,
       },
     },
     auth: {
