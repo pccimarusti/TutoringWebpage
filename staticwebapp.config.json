@@ -1,8 +1,5 @@
 {
-    "responseOverrides": {
-        "compression": {
-            "enableBrotli": true,
-            "enableGzip": true
-        }
-    }
-}  
+  "navigationFallback": {
+    "rewrite": "/index.html"
+  }
+}
