@@ -1,39 +1,35 @@
 # Jackson Bryant Portfolio
 
-This is my personal portfolio website showcasing my skills, projects, and experience as a software engineer specializing in full-stack development.
+A responsive, single-page portfolio website built with modern front-end technologies to showcase my software engineering projects, skills, and experience.
 
-## Features
-- 🔥 Interactive animations powered by Framer Motion
-- 🎨 Beautifully styled with Tailwind CSS
-- 💡 Smooth scrolling and responsive design
-- 💻 Projects section with live demos and GitHub links
-- 📜 Downloadable Resume
+### 🚀 Live Demo
+🔗 [jacksonbryantportfolio.netlify.app](https://jacksonbryantportfolio.netlify.app)
 
-## 🔧 Installation
-1. Clone the repo:  
+---
+
+### 🛠️ Tech Stack
+- **React** (TypeScript)
+- **Tailwind CSS**
+- **Framer Motion**
+- **Supabase** (dynamic content)
+- **Vite**
+- **Microsoft Azure** (custom domain hosting)
+
+---
+
+### 🔧 Features
+- Fully responsive layout (mobile-first)
+- Smooth animations with Framer Motion
+- Dynamic project data pulled from Supabase
+- Custom Azure deployment with domain and SEO
+- Interactive LinkedIn, GitHub, and resume download buttons
+
+---
+
+### 📦 Installation
 
 ```bash
-git clone https://github.com/JacksonBryantFGCU/portfolio.git
-```
-
-2. Install dependencies:
-
-```bash
+git clone https://github.com/JacksonBryantFGCU/portfolio-typescript.git
+cd portfolio-typescript
 npm install
-```
-
-## 📚 Technologies Used
-- React
-- Tailwind CSS
-- Framer Motion
-- React Scroll
-- TypeAnimation
-
-
-## 🎨 Future Improvements
--Add loading animations for better user experience.
-- Implement dark/light theme toggle.
-- Add more interactive animations.
-
-## 📄 License
-This project is licensed under the MIT License.
+npm run dev
