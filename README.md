@@ -3,7 +3,7 @@
 A responsive, single-page portfolio website built with modern front-end technologies to showcase my software engineering projects, skills, and experience.
 
 ### 🚀 Live Demo
-🔗 [jacksonbryantportfolio.netlify.app](https://jacksonbryantportfolio.netlify.app)
+🔗 [jacksonbryant.com](https://jacksonbryant.com)
 
 ---
 
