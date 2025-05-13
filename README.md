@@ -2,12 +2,12 @@
 
 A responsive, single-page portfolio website built with modern front-end technologies to showcase my software engineering projects, skills, and experience.
 
-### 🚀 Live Demo
+### Live Demo
 🔗 [jacksonbryant.com](https://jacksonbryant.com)
 
 ---
 
-### 🛠️ Tech Stack
+### Tech Stack
 - **React** (TypeScript)
 - **Tailwind CSS**
 - **Framer Motion**
@@ -17,7 +17,7 @@ A responsive, single-page portfolio website built with modern front-end technolo
 
 ---
 
-### 🔧 Features
+### Features
 - Fully responsive layout (mobile-first)
 - Smooth animations with Framer Motion
 - Dynamic project data pulled from Supabase
@@ -26,10 +26,14 @@ A responsive, single-page portfolio website built with modern front-end technolo
 
 ---
 
-### 📦 Installation
+### Installation
 
 ```bash
 git clone https://github.com/JacksonBryantFGCU/portfolio-typescript.git
 cd portfolio-typescript
 npm install
 npm run dev
+```
+
+### Lessons Learned
+This project helped me deepen my experience with component-based architecture, responsive design, and integrating Supabase for dynamic content management. It also refined my deployment workflow through Azure.
