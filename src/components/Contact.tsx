@@ -39,10 +39,8 @@ const Contact: React.FC = () => {
     console.log('Submitting form data:', formData)
     
     try {
-      // Use Vercel URL for production, localhost for development
-      const apiUrl = process.env.NODE_ENV === 'production' 
-        ? 'https://tutoringwebpage-8rnvlualf-pauls-projects-3ae7f3b4.vercel.app/api/send-email'
-        : 'http://localhost:3001/api/send-email'
+      // Use Vercel function URL
+      const apiUrl = 'https://tutoringwebpage-8rnvlualf-pauls-projects-3ae7f3b4.vercel.app/api/send-email';
       
       console.log('Sending request to:', apiUrl)
       const response = await fetch(apiUrl, {
@@ -51,20 +49,17 @@ const Contact: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        credentials: 'include' // Include credentials for CORS
       })
 
       console.log('Response status:', response.status)
-      console.log('Response headers:', Object.fromEntries([...response.headers.entries()]))
-      
-      const data = await response.json()
-      console.log('Response data:', data)
-      
+      const responseData = await response.json()
+      console.log('Response data:', responseData)
+
       if (!response.ok) {
-        const errorMsg = data.error || 'Failed to submit form'
-        setErrorMessage(errorMsg)
-        throw new Error(errorMsg)
+        throw new Error(responseData.error || 'Failed to send message')
       }
-      
+
       // Clear form and show success message
       setFormData({
         name: "",
@@ -79,7 +74,9 @@ const Contact: React.FC = () => {
     } catch (error) {
       console.error('Error submitting form:', error)
       setSubmitError(true)
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred'
+      const errorMessage = error instanceof Error 
+        ? `Error: ${error.message}` 
+        : 'An unknown error occurred. Please try again later.'
       setErrorMessage(errorMessage)
     } finally {
       setIsSubmitting(false)
