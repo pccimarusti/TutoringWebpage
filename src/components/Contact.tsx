@@ -39,15 +39,18 @@ const Contact: React.FC = () => {
     console.log('Submitting form data:', formData)
     
     try {
-      // Send data to our API endpoint
-      console.log('Sending request to: http://localhost:3001/api/send-email')
-      const response = await fetch('http://localhost:3001/api/send-email', {
+      // Use Vercel URL for production, localhost for development
+      const apiUrl = process.env.NODE_ENV === 'production' 
+        ? 'https://tutoringwebpage-8rnvlualf-pauls-projects-3ae7f3b4.vercel.app/api/send-email'
+        : 'http://localhost:3001/api/send-email'
+      
+      console.log('Sending request to:', apiUrl)
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-        mode: 'cors' // Explicitly set CORS mode
       })
 
       console.log('Response status:', response.status)

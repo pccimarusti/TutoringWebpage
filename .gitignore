@@ -32,3 +32,4 @@ supabase/functions/.netlify/
 
 # Azure config output (if manually downloading tokens)
 *.azure
+.vercel
