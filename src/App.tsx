@@ -1,14 +1,10 @@
 import React, { useEffect } from "react"
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"
 import Philosophy from "./components/Philosophy"
 import Contact from "./components/Contact"
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
-// import Services from "./components/Services"
 import Subjects from "./components/Subjects"
-// import Testimonials from "./components/Testimonials"
-// import Pricing from "./components/Pricing"
-// import { scroller } from "react-scroll"
 import SubjectDetail from "./pages/SubjectDetail"
 
 // HomePage component to contain all sections
@@ -16,21 +12,17 @@ const HomePage: React.FC = () => {
   const location = useLocation();
   
   useEffect(() => {
-    // Check if we need to scroll to contact section
-    const searchParams = new URLSearchParams(location.search);
-    if (searchParams.get('contact') === 'true' || location.state?.scrollToContact) {
-      setTimeout(() => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-          // Scroll to the section with an offset to account for navbar
-          window.scrollTo({
-            top: contactSection.offsetTop - 120, // Adjust offset as needed
-            behavior: 'smooth'
-          });
-        }
-      }, 50);
+    // Scroll to contact section if URL has #contact
+    if (window.location.hash === '#contact') {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        window.scrollTo({
+          top: contactSection.offsetTop - 120,
+          behavior: 'smooth'
+        });
+      }
     } else {
-      // For all other navigation events, scroll to top
+      // Scroll to top for other pages
       window.scrollTo(0, 0);
     }
   }, [location]);
@@ -38,20 +30,25 @@ const HomePage: React.FC = () => {
   return (
     <div className="container mx-auto px-8">
       <Navbar />
-      <section id="home"><Hero /></section>
-      <section id="about"><Philosophy /></section>
-      <section id="subjects"><Subjects /></section>
-      {/* <section id="services"><Services /></section>
-      <section id="testimonials"><Testimonials /></section>
-      <section id="pricing"><Pricing /></section> */}
-      <section id="contact"><Contact /></section>
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about">
+        <Philosophy />
+      </section>
+      <section id="subjects">
+        <Subjects />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   )
 }
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <Router>
       <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
         {/* Background */}
         <div className="fixed inset-0 -z-10 w-screen h-screen overflow-hidden">
@@ -64,7 +61,7 @@ const App: React.FC = () => {
           <Route path="/subjects/:subject" element={<SubjectDetail />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   )
 }
 

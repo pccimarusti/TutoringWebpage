@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": ".",
+  "homepage": "https://pccimarusti.github.io/TutoringWebpage",
   "scripts": {
     "type-check": "tsc --noEmit",
     "dev": "vite",

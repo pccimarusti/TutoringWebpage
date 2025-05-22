@@ -1,11 +1,25 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
+import { Link } from "react-router-dom"
 import { fadeInUp, slideInRight, staggerContainer } from "../constants/animations"
 import { useContent } from "../hooks/useContent"
 
 const Hero: React.FC = () => {
   const { data: heroContent } = useContent("hero")
+  
+  // Function to handle smooth scrolling to contact section
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      window.scrollTo({
+        top: contactSection.offsetTop - 80, // Adjust offset as needed
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div
       id="home"
@@ -75,21 +89,43 @@ const Hero: React.FC = () => {
                 variants={fadeInUp}
                 initial={{ scale: 1 }}
                 animate={{
-                  scale: [1, 1.15, 1],
-                  transition: { duration: 1.5, repeat: Infinity },
+                  scale: [1, 1.05, 1],
+                  transition: { 
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  },
                 }}
                 whileHover={{
-                  scale: 1.2,
+                  scale: 1.08,
                   backgroundColor: "#8b5cf6",
                   boxShadow: "0 0 12px rgba(139, 92, 246, 0.7), 0 0 24px rgba(139, 92, 246, 0.5)",
+                  transition: {
+                  duration: 0.3,
+                  ease: "easeInOut"
+                  }
                 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative overflow-hidden rounded-xl py-3 px-6 mt-4 w-48 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium tracking-tight transition-all"
+                className="relative overflow-hidden rounded-xl py-3 px-6 mt-4 w-48 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium tracking-tight"
                 aria-label="Book a Session"
+                onClick={scrollToContact}
               >
-                <a href="#contact" className="relative z-10">
+                <motion.span 
+                  className="relative z-10"
+                  animate={{
+                    opacity: [1, 0.8, 1],
+                    transition: {
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    }
+                  }}
+                  whileHover={{
+                    opacity: 1,
+                    transition: { duration: 0.1 }
+                  }}
+                >
                   Book a Session
-                </a>
+                </motion.span>
                 <div className="absolute inset-0 rounded-xl bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
               </motion.button>
             </div>
