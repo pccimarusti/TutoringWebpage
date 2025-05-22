@@ -39,8 +39,8 @@ const Contact: React.FC = () => {
     console.log('Submitting form data:', formData)
     
     try {
-      // Use Vercel Edge Function URL
-      const apiUrl = 'https://tutoringwebpage-8rnvlualf-pauls-projects-3ae7f3b4.vercel.app/api/send-email';
+      // Use Vercel Serverless Function URL
+      const apiUrl = '/api/send-email';
       
       console.log('Sending request to:', apiUrl)
       const response = await fetch(apiUrl, {
