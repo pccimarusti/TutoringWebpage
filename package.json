@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://pccimarusti.github.io/portfolio-typescript",
   "scripts": {
     "type-check": "tsc --noEmit",
     "dev": "vite",
