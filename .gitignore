@@ -1,0 +1,34 @@
+# Dependency directories
+node_modules/
+dist/
+
+# Build output
+.vite/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# macOS system files
+.DS_Store
+
+# VS Code settings (optional)
+.vscode/
+
+# Supabase local dev (optional)
+supabase/.temp
+supabase/migrations/*.sql
+supabase/functions/.netlify/
+
+# Optional: lock files if you want to ignore them
+# yarn.lock
+# package-lock.json
+
+# GitHub workflow cache (if using actions)
+*.tsbuildinfo
+
+# Azure config output (if manually downloading tokens)
+*.azure
