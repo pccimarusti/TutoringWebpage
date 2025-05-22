@@ -6,15 +6,30 @@ require('dotenv').config();
 
 const app = express();
 
-// More detailed CORS configuration
+// Configure CORS to allow requests from your GitHub Pages domain
+const allowedOrigins = [
+  'https://pccimarusti.github.io',
+  'http://localhost:3000',
+  'http://localhost:5173'
+];
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://127.0.0.1:5173'],
-  methods: ['GET', 'POST'],
+  origin: function(origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 
-// Add preflight response for CORS
+// Handle preflight requests
 app.options('*', cors());
 
 app.use(express.json());
