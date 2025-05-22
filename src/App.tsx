@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
         {/* Background */}
         <div className="fixed inset-0 -z-10 w-screen h-screen overflow-hidden">
