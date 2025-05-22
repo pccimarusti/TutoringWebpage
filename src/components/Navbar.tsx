@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-scroll"
 import { motion, AnimatePresence } from "framer-motion"
-import logo from "../assets/Jb (2).png"
+import logo from "../assets/Pc (2).png"
 import { useAppDispatch, useAppSelector } from "../store/store"
 import { toggleMobileMenu } from "../store/uislice"
 
@@ -10,7 +10,8 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({
-  navItems = ["Home", "About", "Tech", "Projects", "Certifications", "Experiences", "Contact"],
+  navItems = ["Home", "About", "Subjects", "Contact"],
+
 }) => {
   const isOpen = useAppSelector((state) => state.ui.isMobileMenuOpen)
   const dispatch = useAppDispatch()
@@ -31,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({
     <nav className="mb-20 flex items-center justify-between py-6 bg-black fixed w-full left-0 h-24 z-10 px-5 transition-all">
       {/* Logo */}
       <div>
-        <img className="w-20 h-20" src={logo} alt="logo" />
+        <img className="w-20 h-20" src={logo} alt="Tutoring Services Logo" />
       </div>
 
       {/* Hamburger Icon */}
@@ -61,22 +62,22 @@ const Navbar: React.FC<NavbarProps> = ({
               key={item}
               to={item.toLowerCase()}
               smooth={true}
-              duration={700}
+              duration={50}
               offset={-180}
               spy={false}
               activeClass="active-link"
               onSetActive={(to: string) => {
                 window.history.replaceState(null, "", `#${to}`)
               }}
-              className="cursor-pointer hover:text-cyan-500 transition-colors text-2xl"
-              onClick={toggleMenu}
+              className="cursor-pointer hover:text-purple-500 transition-colors text-2xl"
+              // onClick={toggleMenu}
             >
               {item}
             </Link>
 
             {/* Active Indicator */}
             <motion.div
-              className="absolute bottom-0 left-0 h-[2px] bg-cyan-500"
+              className="absolute bottom-0 left-0 h-[2px] bg-purple-500"
               layoutId="underline"
               initial={false}
               animate={{ width: item === "active-link" ? "100%" : "0%" }}
@@ -108,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({
                 offset={-180}
                 spy={false}
                 activeClass="active-link"
-                className="cursor-pointer hover:text-cyan-500 transition-colors text-4xl"
+                className="cursor-pointer hover:text-purple-500 transition-colors text-4xl"
                 onClick={toggleMenu}
               >
                 {item}
